@@ -7,9 +7,17 @@ from pathlib import Path
 
 parser = argparse.ArgumentParser(description='Make mods support 1.18.')
 parser.add_argument('path', metavar='PATH', type=str, nargs='+',
-					help='the path to the .jar')
+					help='the path to the .jar or folder of jars')
 args = parser.parse_args()
-paths = args.path
+passed_path = args.path[0]
+paths = []
+
+if passed_path.split("/")[-1].count(".jar") == 0:
+	# Passed a folder
+	paths = os.listdir(passed_path)
+	
+	for i,path in enumerate(paths):
+		paths[i] = passed_path + "/" + path
 
 for path in paths:
 	#Unzip
