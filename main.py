@@ -17,9 +17,12 @@ paths = []
 if passed_path.split("/")[-1].count(".jar") == 0:
 	# Passed a folder
 	paths = os.listdir(passed_path)
-	paths.remove(".DS_Store")
+	if ".DS_Store" in paths:
+		paths.remove(".DS_Store")
 	for i,path in enumerate(paths):
 		paths[i] = passed_path + "/" + path
+else:
+	paths = [passed_path]
 
 if not os.path.exists("tmp"):
 	os.makedirs("tmp")

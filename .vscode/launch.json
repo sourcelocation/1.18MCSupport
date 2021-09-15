@@ -11,7 +11,7 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "args": [
-                "ExampleMods"
+                "ExampleMods/voicechat-1.17-1.2.3.jar"
              ]
         }
     ]

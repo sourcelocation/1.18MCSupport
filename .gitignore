@@ -112,3 +112,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+output/.DS_Store
+ExampleMods/.DS_Store
+.DS_Store
